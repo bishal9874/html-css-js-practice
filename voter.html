@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .voterForm {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            width: 250px;
+
+
+        }
+
+        .counterscard {
+            display: flex;
+            flex-direction: row;
+            /* margin-left: 150px; */
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Button Styles */
+        .increment-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button Hover Effect */
+        .increment-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Icon Styles */
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            background-image: url('https://img.icons8.com/material-outlined/24/ffffff/plus--v1.png');
+            /* You can replace this URL with your own icon */
+            background-size: cover;
+        }
+
+        /* Button Styles */
+        .decrement-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #FF5733;
+            /* Red color */
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button Hover Effect */
+        .decrement-button:hover {
+            background-color: #FF704D;
+            /* Lighter shade of red */
+        }
+
+        /* Icon Styles */
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            background-image: url('https://img.icons8.com/material-outlined/24/ffffff/minus--v1.png');
+            /* Decrement icon */
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; width: 500px; gap: 0.3rem;">
+        <h1>Voter Eligibility Form</h1>
+        <center>
+            <form action="" class="voterForm">
+                <input type="text" placeholder="Name" id="name">
+                <input type="text" placeholder="Aadhar number" id="aadharno" maxlength="12">
+                <input type="text" placeholder="Address" id="address">
+                <input type="text" placeholder="pincode" id="pin" maxlength="6">
+                <input type="text" placeholder="Enter your Age" id="age" max="3">
+                <button type="button" onclick="eligiblitiesCheck()">check</button>
+            </form>
+            <br>
+            <img src="./PS.jpg" alt="" width="200px">
+                <h5>Price: <span id="price"> $599.99</span></h5>
+            <br>
+            <div class="counterscard">
+                <button class="decrement-button" onclick="decrement()">-</button>
+                <p id="counter">0</p>
+                <button class="increment-button" onclick="increment()">+ </button>
+            </div>
+        </center>
+    </div>
+    <div class="display">
+        <p id="resultname"></p>
+        <p id="resultaadhar"></p>
+        <p id="resultaddress"></p>
+        <p id="resultpin"></p>
+        <p id="resultage"></p>
+        <p id="resultEligibility"></p>
+    </div>
+    <script src="./voter.js"></script>
+</body>
+
+</html>
