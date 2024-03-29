@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Cards</title>
+    <style>
+        .student-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+        }
+        .student-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="student-cards">
+        <!-- Student cards will be inserted here dynamically -->
+    </div>
+
+    <script>
+        let student = [
+            {
+                name : "bishal",
+                age: 25
+            },
+            {
+                name : "dasda",
+                age: 28
+            },
+            
+        ];
+
+        // Function to construct the student cards dynamically
+        function constructCards() {
+            let container = document.getElementById("student-cards");
+
+            student.forEach((ele) => {
+                let card = document.createElement("div");
+                card.classList.add("student-card");
+
+                let name = document.createElement("div");
+                name.classList.add("student-name");
+                name.textContent = "Name: " + ele.name;
+
+                let age = document.createElement("div");
+                age.textContent = "Age: " + ele.age;
+
+                card.appendChild(name);
+                card.appendChild(age);
+
+                container.appendChild(card);
+            });
+        }
+
+        // Call the function to construct the student cards
+        constructCards();
+    </script>
+</body>
+</html>

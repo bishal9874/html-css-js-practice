@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loop</title>
+</head>
+<body>
+    <div>
+        <h1>Names</h1>
+        <p id="para">
+            <!-- dynamically insertion -->
+              
+        </p>
+    </div>
+    <script>
+       
+        
+        let studentDetails = [
+            {
+                name:"Bishal",
+                age:25,
+                marks:45,
+            },
+            {
+                name:"Anik",
+                age:19,
+                marks:88,
+            },
+            {
+                name:"rajanya",
+                age:20,
+                marks:95,
+            },
+            {
+                name:"Sudip",
+                age:18,
+                marks:92,
+            },
+        ]
+       
+
+        // studentDetails.forEach((ele)=>{
+           
+        // })
+        function autoPrint() {
+           var para =document.getElementById('para');
+
+
+           studentDetails.forEach(ele =>{
+            
+            let namecell = document.createElement("h4"); 
+            namecell.textContent=ele.name;
+            para.append(namecell)
+            
+            
+            let ageCell = document.createElement("h6");
+            ageCell.textContent=ele.age;
+            namecell.appendChild(ageCell);
+            let hr = document.createElement('hr');
+            ageCell.appendChild(hr);
+        })
+        }
+
+        autoPrint()
+
+    </script>
+</body>
+</html>

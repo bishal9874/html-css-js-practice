@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="student-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="student-table-body">
+            <!-- Student data will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        let student = [
+            {
+                name: "bishal",
+                email: "bishal123@gmail.com",
+                age: 25,
+            },
+            {
+                name: "biplab",
+                email: "biplab123@gmail.com",
+                age: 28
+            },
+            {
+                name: "sayan", 
+                email: "sayan123@gmail.com",
+                age: 22
+            },
+            {
+                name: "Anik", 
+                email: "anik123@gmail.com",
+                age: 19
+            },{
+                name: "Sudip", 
+                email: "sudip123@gmail.com",
+                age: 19
+            }
+        ];
+
+        // Function to construct the table rows dynamically
+        function constructTable() {
+            let tbody = document.getElementById("student-table-body");
+
+            student.forEach((ele) => {
+                let row = document.createElement("tr");
+
+                let nameCell = document.createElement("td");
+                nameCell.textContent = ele.name;
+                row.appendChild(nameCell);
+
+                let emailCell= document.createElement("td");
+                emailCell.textContent = ele.email
+                row.appendChild(emailCell)
+                let ageCell = document.createElement("td");
+                ageCell.textContent = ele.age;
+                row.appendChild(ageCell);
+
+                tbody.appendChild(row);
+            });
+        }
+
+        // Call the function to construct the table
+        constructTable();
+    </script>
+</body>
+
+</html>
